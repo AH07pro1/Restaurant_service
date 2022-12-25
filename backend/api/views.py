@@ -17,3 +17,24 @@ class CreateUser(generics.CreateAPIView):
     serializer_class = UserSerializer
 
 create_user = CreateUser.as_view()
+
+class DetailSingularUser(generics.RetrieveAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+    lookup_field = 'pk'
+
+detail_singular_user = DetailSingularUser.as_view()
+
+class DeleteUser(generics.DestroyAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+    lookup_field = 'pk'
+
+delete_user = DeleteUser.as_view()
+
+class UpdateUser(generics.UpdateAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+    lookup_field = 'pk'
+
+update_user = UpdateUser.as_view()

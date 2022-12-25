@@ -10,3 +10,4 @@ class User(models.Model):
     @property
     def full_name(self):
         return self.f_name + self.l_name
+    
